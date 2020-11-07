@@ -1,2 +1,2 @@
-# go-algorithms
+# goalgorithms
 Algorithms + Data Structures = Programs
