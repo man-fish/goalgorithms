@@ -1,3 +1,20 @@
+/*
+Package heap implement a binary heap datasruct:
+	In computer science, a heap is a specialized tree-based data structure which is
+	essentially an almost completetree that satisfies the heap property:
+		* In a max heap, for any given node C, if P is a parent node of C, then the key
+		* of P is greater than or equal to the key of C.
+		* In a min heap, the key of P is less than or equal to the key of C. The node
+		* at the "top" of the heap (with no parents) is called the root node.
+
+	A common implementation of a heap is the binary heap, in which the tree is
+	a binary tree . The heap data structure, specifically the binary heap, was
+	introduced by J. W. J. Williams in 1964, as a data structure for the heapsort
+	sorting algorithm Heaps are also crucial in several efficient graph algorithms
+	such as Dijkstra's algorithm. When a heap is a complete binary tree, it has a
+	smallest possible height—a heap with N nodes and for each node a branches always
+	has loga N height.
+*/
 package heap
 
 import (
