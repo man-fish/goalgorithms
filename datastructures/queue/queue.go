@@ -44,8 +44,8 @@ func (q *Queue) Size() int {
 	return q.list.Len()
 }
 
-// Add a element to the front of queue
-func (q *Queue) Add(v interface{}) {
+// Push a element to the front of queue
+func (q *Queue) Push(v interface{}) {
 	q.list.PushBack(v)
 }
 
@@ -56,5 +56,8 @@ func (q *Queue) Poll() interface{} {
 
 // Peek return the first ele from queue
 func (q *Queue) Peek() interface{} {
-	return q.list.Front().Value
+	if ele := q.list.Front(); ele != nil {
+		return ele.Value
+	}
+	return nil
 }

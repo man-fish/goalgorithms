@@ -44,5 +44,8 @@ func (s *Stack) Pop() interface{} {
 
 // Peek return the top ele from stack
 func (s *Stack) Peek() interface{} {
-	return s.list.Back().Value
+	if ele := s.list.Back(); ele != nil {
+		return ele.Value
+	}
+	return nil
 }

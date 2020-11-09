@@ -1,6 +1,8 @@
 package sort
 
-import "math/rand"
+import (
+	"math/rand"
+)
 
 // Sortable represent the elements which can be sorted.
 type Sortable interface {
