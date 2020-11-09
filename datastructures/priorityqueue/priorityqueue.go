@@ -18,7 +18,9 @@ WikiPage:
 */
 package priorityqueue
 
-import "github.com/man-fish/goalgorithms/datastructures/compare"
+import (
+	"github.com/man-fish/goalgorithms/datastructures/compare"
+)
 
 // PqHeap is a priority queue
 type PqHeap struct {
@@ -60,9 +62,9 @@ func (q *PqHeap) Add(c compare.Comparable) {
 func (q *PqHeap) Pop() compare.Comparable {
 	top := q.tree[1]
 	q.tree[1], q.tree[q.size] = q.tree[q.size], q.tree[1]
-	q.size--
-	q.sink(1)
+	q.size = q.size - 1
 	q.tree[q.size+1] = nil
+	q.sink(1)
 	return top
 }
 
@@ -76,7 +78,7 @@ func (q *PqHeap) swim(i int) {
 func (q *PqHeap) sink(i int) {
 	for i*2 <= q.size {
 		k := i * 2
-		if q.tree[k].CompareTo(q.tree[k+1]) == -1 {
+		if k+1 <= q.size && q.tree[k].CompareTo(q.tree[k+1]) == -1 {
 			k++
 		}
 		if q.tree[k].CompareTo(q.tree[i]) == -1 {
