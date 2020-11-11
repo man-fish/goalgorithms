@@ -7,6 +7,7 @@ type man struct {
 }
 
 func (m *man) say() {
+	(*m) = man{}
 	fmt.Println(m.name)
 }
 
@@ -19,5 +20,9 @@ func mansay(m *man) {
 }
 
 func main() {
-	mansay(nil)
+	m := &man{
+		name: "yoxn",
+	}
+	m.say()
+	fmt.Println(m.name)
 }
