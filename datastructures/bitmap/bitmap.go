@@ -27,14 +27,15 @@ package bitmap
 
 // BitMap represent a bit-map datastructure
 type BitMap struct {
-	bits []int32
+	// int32 is also ok
+	bits []uint32
 	size int
 }
 
 // New can construct a BitMap and return its ptr
 func New(size int) *BitMap {
 	return &BitMap{
-		bits: make([]int32, size),
+		bits: make([]uint32, size),
 		size: size*32 - 1,
 	}
 }
