@@ -106,3 +106,6 @@ func (b *BloomFilter) hash3(k string) int {
 	}
 	return int(math.Abs(float64(hash % b.size)))
 }
+
+// ...
+// func (b *BloomFilter) hashk(k string) int
